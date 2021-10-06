@@ -9,3 +9,8 @@ SQL Skills Used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functio
 Tableau Charts Used: Bar Charts, Line Charts, Map Chart
 
 Goal: To find the time and place with the most emergency calls
+
+Added in python jupyternotebook of 911 project from udemy course
+
+Python Libraries: numpy, pandas, matplotlib, seaborn
+
