@@ -5,3 +5,4 @@ amount they spent before and after they became members
 
 2) Pizza Runner: We were given a dataset with 'unworkable' data types, had to manually update them to the correct type. We worked on finding out pizza metrics, 
 runner and customer experience, ingredient optimization, and Pricing and Ratings
+--Pizza Runner is incredibly messy due to inconsistent data types from given data
