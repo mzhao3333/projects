@@ -1,3 +1,6 @@
+This is a summary/documentation of what I did in the Rscripts for this project.
+
+
 # ASK
 
 
@@ -61,13 +64,45 @@ I grabbed a list of distinct station names and ids and scrolled through them. I 
 
 
 
-# Analyze
+# Analyze and Share
 
 
-### Descriptive Statistics
+### Descriptive Statistics and Visualizations
 
 
 Using group_by and summarise, I checked the number of rides made by casuals and members; members have a lot more trips. 
+
+Checked how many trips were made on each bike type for the two groups; they both prefer electric bikes.
+
+Created a quick graph to visualize the average trip duration in seconds for each group; casuals take longer trips
+
+Made a line chart to see the number of trips each group makes per month. Did the same for weekdays and hours; Both groups have more trips in warmer months. Casuals like going out more on weekends than members. Members and Casuals both mainly take rides during daytime but Members spike in early morning and late afternoon.
+
+Looked at the most popular stations via bar graph.
+
+
+### Main Takeaways and Suggestions
+
+
+As both groups enjoy riding electric bikes, we can make more available for members to incentivize more casual riders to become members.
+
+Casuals tend to take longer trips than members, we can increase the amount of hourly/day passes so its cheaper for them to get an annual membership.
+
+Since the rides are most popular for casuals during the summer season, on the weekends, and near the coastline of Lake Michigan, this time period and location is when our marketing campaign should begin. 
+
+
+
+# Feedback
+
+A majority of my work was on data cleaning and processing. I don't think this dataset was very suitable for any linear regressions or modeling so I mainly looked at the mins/maxs/avgs, etc. 
+
+I don't know how they collect this data but some data validation rules like a picklist or character formatting would make it a lot better. 
+
+
+
+
+
+
 
 
 
