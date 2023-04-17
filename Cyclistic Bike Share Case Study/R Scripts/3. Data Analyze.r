@@ -6,7 +6,7 @@ str(combined_data)
 # Let' see how many casuals and members there are
 gb_mc = combined_data %>% group_by(member_casual) %>% summarise(count = n())
 gb_mc
-### There is almost a million more members than casuals with members at around 3.26 million
+### There is almost a million more trips with members than casuals with members at around 3.26 million
 
 # Let's explore what sort of bikes casuals and members like to ride
 gb_mc_rt = combined_data %>% group_by(member_casual, rideable_type) %>% summarise(count = n())
