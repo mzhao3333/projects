@@ -12,9 +12,9 @@ We are a junior data analyst working at a fictional bike-share company in Chicag
 
 ## Data Context
 
-We acquire our monthly data for the year 2022 from this link: `[Click here to see divvy-tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)`
+We acquire our monthly data for the year 2022 from this link: '[Click here to see divvy-tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)'
 
-The data is made available by Motivate International Inc. under this `[license](https://ride.divvybikes.com/data-license-agreement)`
+The data is made available by Motivate International Inc. under this '[license](https://ride.divvybikes.com/data-license-agreement)'
 
 
 
