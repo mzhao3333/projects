@@ -5,8 +5,7 @@
 ### What problem am I solving?
 
 
-Therefore we need to find the difference between casual riders and annual members and design a strategy to convert casuals into annuals.
-Our recommendations must be backed with compelling data insights and data visualizations.
+The director wants to maximize the number of annual memberships. Therefore we need to find the difference between casual riders and annual members and design a strategy to convert casuals into annuals. Our recommendations must be backed with compelling data insights and data visualizations.
 
 
 
