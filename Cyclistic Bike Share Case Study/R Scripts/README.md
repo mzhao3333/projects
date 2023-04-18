@@ -2,12 +2,15 @@ This is a summary/documentation of what I did in the Rscripts for this project.
 <br>
 <br>
 <br>
+<br>
 # ASK
 <br>
 <br>
 ###What problem am I solving?
 <br>
+<br>
 The director wants to maximize the number of annual memberships. Therefore we need to find the difference between casual riders and annual members and design a strategy to convert casuals into annuals. Our recommendations must be backed with compelling data insights and data visualizations.
+<br>
 <br>
 <br>
 <br>
@@ -16,7 +19,9 @@ The director wants to maximize the number of annual memberships. Therefore we ne
 <br>
 ### Where is our data located? How is it organized? Are we allowed to use this data?
 <br>
+<br>
 Our data is made available through monthly csv files and we have a license to use it.
+<br>
 <br>
 <br>
 <br>
@@ -24,6 +29,7 @@ Our data is made available through monthly csv files and we have a license to us
 <br>
 <br>
 ### Data Importing
+<br>
 <br>
 I load all of the common libraries and ones that I need. Note: if two libraries have a function with the same name, the latest one is applied.
 
@@ -35,7 +41,9 @@ Checked if all the column names, column order, number of columns, and column typ
 
 Combined all of our dataframes into a single one.
 <br>
+<br>
 ### Data Cleaning
+<br>
 <br>
 Created a backup of our combined dataframe before making any changes so I don't have to repeat the data importing process all over if I make a permanant mistake.
 
@@ -57,10 +65,12 @@ I grabbed a list of distinct station names and ids and scrolled through them. I 
 <br>
 <br>
 <br>
+<br>
 # Analyze and Share
 <br>
 <br>
 ### Descriptive Statistics and Visualizations
+<br>
 <br>
 Using group_by and summarise, I checked the number of rides made by casuals and members; members have a lot more trips. 
 
@@ -74,13 +84,16 @@ Looked at the most popular stations via bar graph.
 
 I tried to assign a zipcode to each trip using google maps API but since I was doing it on a row to row basis, Rstudio would crash even if I was doing it in batches. 
 <br>
+<br>
 ### Main Takeaways and Suggestions
+<br>
 <br>
 As both groups enjoy riding electric bikes, we can make more available for members to incentivize more casual riders to become members.
 
 Casuals tend to take longer trips than members, we can increase the amount of hourly/day passes so its cheaper for them to get an annual membership.
 
 Since the rides are most popular for casuals during the summer season, on the weekends, and near the coastline of Lake Michigan, this time period and location is when our marketing campaign should begin. 
+<br>
 <br>
 <br>
 <br>
