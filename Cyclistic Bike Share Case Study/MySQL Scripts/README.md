@@ -88,26 +88,22 @@ Previewing the latitude and longitude fields, we see that it is not super consis
 <br>
 <br>
 
-# Analyze and Share
+# Analyze
 
 <br>
 <br>
 
-### Descriptive Statistics and Visualizations
+### Descriptive Statistics
 
 <br>
 <br>
-Using group_by and summarise, I checked the number of rides made by casuals and members; members have a lot more trips. 
+We check the summaries of our trip duration column and found that the longest trip was nearly 10 days. We filter to see the row with this trip duration and see that its bike type is 'docked'. Upon further research, trips with docked bike types are not actual trips and should be excluded from the analysis.
 
-Checked how many trips were made on each bike type for the two groups; they both prefer electric bikes.
+Using group_by to aggregate, we find that electric bikes are more popular and results in a shorter trip in general.
 
-Created a quick graph to visualize the average trip duration in seconds for each group; casuals take longer trips
+We start to find the differences between casuals and members by finding the amount of casual trips vs member trips. It is unfortunate that there is no User ID or anything to identify who is riding the bike, we only know whether or not this was a casual/member trip and not the actual number of people that belong to each group.
 
-Made a line chart to see the number of trips each group makes per month. Did the same for weekdays and hours; Both groups have more trips in warmer months. Casuals like going out more on weekends than members. Members and Casuals both mainly take rides during daytime but Members spike in early morning and late afternoon.
-
-Looked at the most popular stations via bar graph.
-
-I tried to assign a zipcode to each trip using google maps API but since I was doing it on a row to row basis, Rstudio would crash even if I was doing it in batches. 
+We explore their differences via bike types, trip durations, popular stations, months, days, and hours.
 <br>
 <br>
 
@@ -124,14 +120,25 @@ Since the rides are most popular for casuals during the summer season, on the we
 <br>
 <br>
 <br>
+# Helper Queries
 
+It is extremely helpful to have a separate query tab open to just view the dataset as well as to test things.
+
+One useful query I created allowed me to grab all the column names separated by ',' to be used during LOAD DATA importing.
+<br>
+<br>
+<br>
+<br>
 # Feedback
 
 <br>
 <br>
-A majority of my work was on data cleaning and processing. I don't think this dataset was very suitable for any linear regressions or modeling so I mainly looked at the mins/maxs/avgs, etc. 
+There is not a whole lot of analysis other than descriptive since we're only trying to find out the differences between members and casuals. The only variables we had were what bikes they rode, the time, and location.
+
+If I had more information like USER ID, what type of pass they had, and demographics, I could have better analysis and suggestions but I understand that it was not provided for the sake of security and privacy.
 
 I don't know how this data was collected but some data validation rules like a picklist or character formatting would make it a lot better. 
+
 
 
 
