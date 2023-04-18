@@ -118,8 +118,7 @@ Casuals tend to take longer trips than members, we can increase the amount of ho
 Since the rides are most popular for casuals during the summer season, on the weekends, and near the coastline of Lake Michigan, this time period and location is when our marketing campaign should begin. 
 <br>
 <br>
-<br>
-<br>
+
 # Helper Queries
 
 It is extremely helpful to have a separate query tab open to just view the dataset as well as to test things.
@@ -128,7 +127,7 @@ One useful query I created allowed me to grab all the column names separated by 
 <br>
 <br>
 <br>
-<br>
+
 # Feedback
 
 <br>
