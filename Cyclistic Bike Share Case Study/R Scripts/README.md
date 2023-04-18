@@ -1,40 +1,30 @@
 This is a summary/documentation of what I did in the Rscripts for this project.
-
-
+<br>
+<br>
+<br>
 # ASK
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-
-
 ### What problem am I solving?
-
-
+<br>
 The director wants to maximize the number of annual memberships. Therefore we need to find the difference between casual riders and annual members and design a strategy to convert casuals into annuals. Our recommendations must be backed with compelling data insights and data visualizations.
-
-
-
+<br>
+<br>
+<br>
 # PREPARE
-
-
-
+<br>
+<br>
 ### Where is our data located? How is it organized? Are we allowed to use this data?
-
-
+<br>
 Our data is made available through monthly csv files and we have a license to use it.
-
-
-
+<br>
+<br>
+<br>
 # PROCESS
-
-
-
+<br>
+<br>
 ### Data Importing
-
-
+<br>
 I load all of the common libraries and ones that I need. Note: if two libraries have a function with the same name, the latest one is applied.
 
 Created a function to set the working directory instead of hardcoding in the path line.
@@ -44,11 +34,9 @@ I have 12 csv files to load in as there is one for each month, I didn't want to 
 Checked if all the column names, column order, number of columns, and column types are the same.
 
 Combined all of our dataframes into a single one.
-
-
+<br>
 ### Data Cleaning
-
-
+<br>
 Created a backup of our combined dataframe before making any changes so I don't have to repeat the data importing process all over if I make a permanant mistake.
 
 Checked for duplicated data, if certain data is unique, and what data types the columns are.
@@ -66,15 +54,14 @@ I also see negative time duration and notice that their end dates are behind the
 Checked the mins and maxs of our dates to see if they are all in 2022. Some trips end in 2023 but everything starts in 2022, all good. We disaggregate our dates into months, days, and hour for granularity. 
 
 I grabbed a list of distinct station names and ids and scrolled through them. I don't know of a good way to check/clean data like this. I scroll over and find things like testing, divvy 001, charging, ending in .0, etc and removed them.
-
-
-
+<br>
+<br>
+<br>
 # Analyze and Share
-
-
+<br>
+<br>
 ### Descriptive Statistics and Visualizations
-
-
+<br>
 Using group_by and summarise, I checked the number of rides made by casuals and members; members have a lot more trips. 
 
 Checked how many trips were made on each bike type for the two groups; they both prefer electric bikes.
@@ -86,21 +73,20 @@ Made a line chart to see the number of trips each group makes per month. Did the
 Looked at the most popular stations via bar graph.
 
 I tried to assign a zipcode to each trip using google maps API but since I was doing it on a row to row basis, Rstudio would crash even if I was doing it in batches. 
-
-
+<br>
 ### Main Takeaways and Suggestions
-
-
+<br>
 As both groups enjoy riding electric bikes, we can make more available for members to incentivize more casual riders to become members.
 
 Casuals tend to take longer trips than members, we can increase the amount of hourly/day passes so its cheaper for them to get an annual membership.
 
 Since the rides are most popular for casuals during the summer season, on the weekends, and near the coastline of Lake Michigan, this time period and location is when our marketing campaign should begin. 
-
-
-
+<br>
+<br>
+<br>
 # Feedback
-
+<br>
+<br>
 A majority of my work was on data cleaning and processing. I don't think this dataset was very suitable for any linear regressions or modeling so I mainly looked at the mins/maxs/avgs, etc. 
 
 I don't know how this data was collected but some data validation rules like a picklist or character formatting would make it a lot better. 
