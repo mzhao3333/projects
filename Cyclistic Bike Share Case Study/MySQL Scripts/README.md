@@ -46,7 +46,9 @@ Our data is made available through monthly csv files and we have a license to us
 <br>
 <br>
 I first tried to manually load each csv file as a table into MySQL but it wouldn't even load one table for one csv file. I looked into alternatives and found the LOAD DATA INFILE function.
+
 <br>
+
 I created an empty table with all the same columns as the csv files and data types I deemed to be most logical. Then I duplicated this table since each month of data is in a separate csv file.
 
 LOAD DATA isn't allowed in Stored Procedures so we manually copy-pasted the same code, making changes to the pathfile name and the table loaded into.
