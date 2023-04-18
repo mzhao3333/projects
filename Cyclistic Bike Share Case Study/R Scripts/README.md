@@ -6,7 +6,7 @@ This is a summary/documentation of what I did in the Rscripts for this project.
 # ASK
 <br>
 <br>
-###What problem am I solving?
+### What problem am I solving?
 <br>
 <br>
 The director wants to maximize the number of annual memberships. Therefore we need to find the difference between casual riders and annual members and design a strategy to convert casuals into annuals. Our recommendations must be backed with compelling data insights and data visualizations.
