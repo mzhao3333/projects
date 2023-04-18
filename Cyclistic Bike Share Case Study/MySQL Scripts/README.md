@@ -62,23 +62,27 @@ After that I joined all the tables together into a single one and double checked
 
 <br>
 <br>
-Created a backup of our combined dataframe before making any changes so I don't have to repeat the data importing process all over if I make a permanant mistake.
+Created another table to store our merged table before we started our data cleaning process so we don't have to redo the data importation step if anything goes wrong.
 
-Checked for duplicated data, if certain data is unique, and what data types the columns are.
+It is always good practice to have a preview of the data to get a brief shallow understanding of the context. We select all columns and limit it to see this.
 
-Our date columns is of chr data type. Previewed a sample of our date values to see how they look like. Initially, I tried to use POSIXct to convert the characters into date format but it did not work as there were 2 different formats.
+Checked if there are any duplicates, if all IDs are unique, different unique values in certain columns.
 
-I subsetted the date data using is.na and grepl with regular expression to see what the other format looked like. Subsetted it again with the other format included and returned no results meaning there are only null values and 2 different date formats.
+We begin our cleaning process by checking if all the trips were in 2022. They all started in 2022 and some end in 2023 which is fine. 
 
-I know that lubridate library has a lot of functions dealing with time so I looked into that and found the parse_date_time function which allowed me to convert the two date formats into POSIXct values then I formatted it using the format function so I have a singular format.
+We create a calculated column to see the time each trip took using the start and end dates and then we delete those that are too short or too long. It is recommended to select this data first before deleting so you know exactly what you're deleting.
 
-With proper dates, I created a column to show the difference in seconds between start and end dates. Deleted trips that were longer than 864000 or shorter than 60 as these are invalid trips or stolen bikes.
+Thanks to this selection, we see that there are negative trip durations as well and upon closer look, the start and end dates are supposedly swapped. We find that deleting and updating takes a super long time due to the lack of indexes. We create an index on ride_id which sped it up significantly more.
 
-I also see negative time duration and notice that their end dates are behind their start dates. We swapped the dates and recalculated the time difference and cleaned them again.
+Update the dataset to swap the start dates and stations with end dates and stations.
 
-Checked the mins and maxs of our dates to see if they are all in 2022. Some trips end in 2023 but everything starts in 2022, all good. We disaggregate our dates into months, days, and hour for granularity. 
+Recheck our data cleaning efforts to make sure it went right. 
 
-I grabbed a list of distinct station names and ids and scrolled through them. I don't know of a good way to check/clean data like this. I scroll over and find things like testing, divvy 001, charging, ending in .0, etc and removed them.
+We preview the unique values of our station names and IDs to get a quick glimpse. Scrolling down, I see things ending in .0, charging, test, divvy 001, cassette. Based on this case study, all of these stations are not 'real' trips as they are charging stations, repair centers, and tests. We delete all rows that match this criteria.
+
+Previewing the latitude and longitude fields, we see that it is not super consistent, some are more accurate than others with more decimal places.
+
+
 <br>
 <br>
 <br>
