@@ -23,7 +23,9 @@ The director wants to maximize the number of annual memberships. Therefore we ne
 
 <br>
 <br>
+
 ### Where is our data located? How is it organized? Are we allowed to use this data?
+
 <br>
 <br>
 Our data is made available through monthly csv files and we have a license to use it.
@@ -31,10 +33,14 @@ Our data is made available through monthly csv files and we have a license to us
 <br>
 <br>
 <br>
+
 # PROCESS
+
 <br>
 <br>
+
 ### Data Importing
+
 <br>
 <br>
 I load all of the common libraries and ones that I need. Note: if two libraries have a function with the same name, the latest one is applied.
@@ -48,7 +54,9 @@ Checked if all the column names, column order, number of columns, and column typ
 Combined all of our dataframes into a single one.
 <br>
 <br>
+
 ### Data Cleaning
+
 <br>
 <br>
 Created a backup of our combined dataframe before making any changes so I don't have to repeat the data importing process all over if I make a permanant mistake.
@@ -72,10 +80,14 @@ I grabbed a list of distinct station names and ids and scrolled through them. I 
 <br>
 <br>
 <br>
+
 # Analyze and Share
+
 <br>
 <br>
+
 ### Descriptive Statistics and Visualizations
+
 <br>
 <br>
 Using group_by and summarise, I checked the number of rides made by casuals and members; members have a lot more trips. 
@@ -91,7 +103,9 @@ Looked at the most popular stations via bar graph.
 I tried to assign a zipcode to each trip using google maps API but since I was doing it on a row to row basis, Rstudio would crash even if I was doing it in batches. 
 <br>
 <br>
+
 ### Main Takeaways and Suggestions
+
 <br>
 <br>
 As both groups enjoy riding electric bikes, we can make more available for members to incentivize more casual riders to become members.
@@ -103,7 +117,9 @@ Since the rides are most popular for casuals during the summer season, on the we
 <br>
 <br>
 <br>
+
 # Feedback
+
 <br>
 <br>
 A majority of my work was on data cleaning and processing. I don't think this dataset was very suitable for any linear regressions or modeling so I mainly looked at the mins/maxs/avgs, etc. 
