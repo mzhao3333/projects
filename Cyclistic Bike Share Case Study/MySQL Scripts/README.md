@@ -131,7 +131,6 @@ One useful query I created allowed me to grab all the column names separated by 
 # Feedback
 
 <br>
-<br>
 There is not a whole lot of analysis other than descriptive since we're only trying to find out the differences between members and casuals. The only variables we had were what bikes they rode, the time, and location.
 
 If I had more information like USER ID, what type of pass they had, and demographics, I could have better analysis and suggestions but I understand that it was not provided for the sake of security and privacy.
