@@ -3,10 +3,14 @@ This is a summary/documentation of what I did in the Rscripts for this project.
 <br>
 <br>
 <br>
+
 # ASK
+
 <br>
 <br>
+
 ### What problem am I solving?
+
 <br>
 <br>
 The director wants to maximize the number of annual memberships. Therefore we need to find the difference between casual riders and annual members and design a strategy to convert casuals into annuals. Our recommendations must be backed with compelling data insights and data visualizations.
@@ -14,7 +18,9 @@ The director wants to maximize the number of annual memberships. Therefore we ne
 <br>
 <br>
 <br>
+
 # PREPARE
+
 <br>
 <br>
 ### Where is our data located? How is it organized? Are we allowed to use this data?
