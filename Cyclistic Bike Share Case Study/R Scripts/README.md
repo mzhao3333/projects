@@ -80,6 +80,8 @@ Made a line chart to see the number of trips each group makes per month. Did the
 
 Looked at the most popular stations via bar graph.
 
+I tried to assign a zipcode to each trip using google maps API but since I was doing it on a row to row basis, Rstudio would crash even if I was doing it in batches. 
+
 
 ### Main Takeaways and Suggestions
 
@@ -96,7 +98,7 @@ Since the rides are most popular for casuals during the summer season, on the we
 
 A majority of my work was on data cleaning and processing. I don't think this dataset was very suitable for any linear regressions or modeling so I mainly looked at the mins/maxs/avgs, etc. 
 
-I don't know how they collect this data but some data validation rules like a picklist or character formatting would make it a lot better. 
+I don't know how this data was collected but some data validation rules like a picklist or character formatting would make it a lot better. 
 
 
 
