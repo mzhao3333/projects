@@ -1,3 +1,5 @@
+[Click here to see my portfolio](https://michaelkzhao.wixsite.com/portfolio)
+
 # Cyclistic Bike Share Case Study
 
 ## Introduction
