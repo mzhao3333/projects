@@ -1,6 +1,8 @@
 This is a summary/documentation of what I did in the Rscripts for this project.
 
 [Click here to see the rmarkdown version in html format](https://rawcdn.githack.com/mzhao3333/projects/d3a1851fe8c4a34329048032f8786845866a7a4b/Cyclistic%20Bike%20Share%20Case%20Study/R%20Scripts/Cyclistic-Bike-Share-Case-Study-GitHub.html)
+
+[Click here to see the tableau public visualization](https://public.tableau.com/app/profile/michael.zhao5952/viz/CyclisticBikeShareCaseStudy2022/TitlePage)
 <br>
 <br>
 <br>
