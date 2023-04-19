@@ -1,0 +1,412 @@
+# Cyclistic Bike Share Case Study
+
+## Introduction
+
+This is the Cyclistic bike-share analysis case study that is assigned as part of the Google Data Analytics Professional Certificate course from Coursera.
+
+The goal of this case study is to use the data analysis process which includes ask, prepare, process, analyze, share, and act on a real life business problem.
+
+## Scenario
+
+We are a junior data analyst working at a fictional bike-share company in Chicago named Cyclistic. We believe that maximizing the number of annual memberships will help the company succeed. Our goal is to understand how casual and annual members use our bikes differently and design a strategy to convert casual riders into annual members based on these insights.
+
+## Data Context
+
+We acquire our monthly data for the year 2022 from this link: [Click here to see divvy-tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
+
+The data is made available by Motivate International Inc. under this [license](https://ride.divvybikes.com/data-license-agreement).
+
+
+
+Coincidentally, this is an interesting dataset for me to work with as I currently reside in Chicago and I see these divvy bikes quite often.
+
+# ASK
+
+### What problem am I solving?
+
+The director wants to maximize the number of annual memberships. Therefore we need to find the difference between casual riders and annual members and design a strategy to convert casuals into annuals. Our recommendations must be backed with compelling data insights and data visualizations.
+
+# PREPARE
+
+### Where is our data located? How is it organized? Are we allowed to use this data?
+
+Our data is made available through monthly csv files and we have a license to use it.
+
+# PROCESS
+
+## Data Importing
+
+Load in libraries
+```{r libraries-chunk}
+library(tidyverse)
+library(dplyr)
+library(dplyr)
+library(corrplot)
+library(anytime)
+library(lubridate)
+library(scales)
+library(ggplot2)
+library(reshape2)
+library(stats)
+library(fastDummies)
+```
+
+Grab all csv files in our working directory and create a list that stores each individual csv file as a dataframe as a list element.
+```{r getcsv-storelist chunk}
+csv_files <- list.files(pattern = ".csv", full.names = TRUE) 
+data_list <- lapply(csv_files, read.csv)
+```
+
+
+Check if all the csv files have the same columns in the same order
+```{r}
+same_cols <- sapply(data_list, function(x) identical(names(x), names(data_list[[1]])))
+
+if (all(same_cols)) { 
+  cat("All CSV files have the same columns in the same order.\n")
+} else {
+  cat("Not all CSV files have the same columns in the same order.\n")
+}
+```
+
+Check if all csv files have the same number of columns
+```{r}
+same_ncols <- sapply(data_list, function(x) ncol(x) == ncol(data_list[[1]]))
+
+if (all(same_ncols)) {
+  cat("All CSV files have the same number of columns.\n")
+} else {
+  cat("Not all CSV files have the same number of columns.\n")
+}
+```
+
+Check if all columns have the same data types in all csv files
+```{r}
+col_classes <- lapply(data_list, function(x) sapply(x, class))
+
+all_col_classes_same <- all(sapply(col_classes, function(x) all(x == col_classes[[1]])))
+
+if (all_col_classes_same) {
+  cat("All data frames have matching column data types.\n")
+} else {
+  cat("Not all data frames have matching column data types.\n")
+}
+```
+
+
+```{r}
+combined_data <- do.call(rbind,data_list)
+
+head(combined_data)
+```
+
+## Data Cleaning
+
+
+Create a backup before any changes
+```{r}
+combined_data_preclean = combined_data
+```
+
+Check the structure of the dataframe and the datatypes of each column
+```{r}
+str(combined_data)
+```
+
+
+Explore each column to see which needs cleaning.
+Check if there are any duplicates. Returns 0 if there are no duplicates - there are no duplicates.
+```{r}
+anyDuplicated(combined_data)
+```
+
+Checking if ride_id is unique, it should since technically each ride is distinct. No results, all ride ids are unique.
+```{r}
+anyDuplicated(combined_data$ride_id)
+```
+
+Explore the types of bikes. Upon further research, docked_bike trips are not real trips. Will need to be filtered out later.
+```{r}
+unique(combined_data$rideable_type)
+```
+
+Explore the first couple of rows we have for this date column.
+```{r}
+head(combined_data$started_at[!is.na(combined_data$started_at)])
+```
+
+It is possible that there could be multiple date formats. Check by subsetting the dataset to filter out NAs and the first format we saw through grepl and regular expression.
+```{r}
+head(combined_data$started_at[!is.na(combined_data$started_at) & !grepl("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$", combined_data$started_at)])
+```
+
+Do it again to see if there is another date format other than these two. Character(0) means no values that meet the conditions therefore only blanks and these two formats exist.
+```{r}
+head(combined_data$started_at[!is.na(combined_data$started_at) & !grepl("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$", combined_data$started_at)
+                         & !grepl("^\\d{1,2}/\\d{1,2}/\\d{4} \\d{1,2}:\\d{2}$", combined_data$started_at)])
+```
+
+It is a possibility that the other date column has other date formats, perform the same check.
+```{r}
+head(combined_data$ended_at[!is.na(combined_data$ended_at) & !grepl("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$", combined_data$ended_at)
+                         & !grepl("^\\d{1,2}/\\d{1,2}/\\d{4} \\d{1,2}:\\d{2}$", combined_data$ended_at)])
+```
+
+For both date columns, we will use the parse_date_time function from the lubridate library in order to convert the two formats into type POSIXct date-time. Then we will use format to specify the date format that we want and convert it back to date-time with POSIXct since format returns a chr type.
+I chose to keep the format with only minutes to keep it more consistent otherwise a lot of our times will just end in 00 seconds.
+```{r}
+combined_data$started_at = parse_date_time(combined_data$started_at, c("%m/%d/%Y %H:%M", "%Y-%m-%d %H:%M:%S"))
+combined_data$started_at = format(combined_data$started_at, "%m/%d/%Y %H:%M")
+combined_data$ended_at = parse_date_time(combined_data$ended_at, c("%m/%d/%Y %H:%M", "%Y-%m-%d %H:%M:%S"))
+combined_data$ended_at = format(combined_data$ended_at, "%m/%d/%Y %H:%M")
+combined_data$started_at = as.POSIXct(combined_data$started_at, format = "%m/%d/%Y %H:%M")
+combined_data$ended_at = as.POSIXct(combined_data$ended_at, format = "%m/%d/%Y %H:%M")
+```
+
+
+Create a column to calculate the time difference between trips. Create a df to only see the time columns and explore it. Filter it so I can take a look at trips are considered bad trips if they are less than a minute or over 864000 seconds.
+```{r}
+combined_data$time_diff_sec = as.numeric(difftime(combined_data$ended_at, combined_data$started_at, units = "secs"))
+df_timecheck = combined_data %>% select(started_at, ended_at, time_diff_sec) %>% arrange(time_diff_sec)
+df_timecheck_badtrips = df_timecheck %>% filter(time_diff_sec < 60 | time_diff_sec > 864000) %>% arrange(time_diff_sec) 
+head(df_timecheck_badtrips)
+```
+
+We noticed that some time differences are negative which implies their started_at and ended_at values are swapped. We swap these values and recreate our time difference column. Filter out the rows that are bad trips based on trip duration and double check the min and max of trip duration.
+```{r}
+combined_data <- combined_data %>%
+  mutate(
+    temp = started_at, #Need to create a temp for ended_at to reference otherwise it will reference the same value since started_at will be changed to ended_at
+    started_at = if_else(time_diff_sec < 0, ended_at, started_at),
+    ended_at = if_else(time_diff_sec < 0, temp, ended_at)
+  ) %>% select(-temp)
+combined_data$time_diff_sec = as.numeric(difftime(combined_data$ended_at, combined_data$started_at, units = "secs"))
+combined_data = combined_data %>% filter(time_diff_sec >= 60 & time_diff_sec <= 864000)
+min(combined_data$time_diff_sec)
+max(combined_data$time_diff_sec)
+```
+
+Double check if all trips are in 2022. All of them start in 2022 but some end in 2023 which is fine.
+```{r}
+min(combined_data$started_at)
+max(combined_data$started_at)
+min(combined_data$ended_at)
+max(combined_data$ended_at)
+```
+
+Extract months, days, and hours from our date column.
+```{r}
+combined_data$start_month = format(combined_data$started_at, "%m")
+combined_data$start_day = format(combined_data$started_at, "%A")
+combined_data$start_hour = format(combined_data$started_at, "%H")
+
+head(combined_data %>% select(started_at, start_month, start_day, start_hour))
+```
+
+Check our station name and id columns for cleaning. Many rows have blanks, there are different ids/names for the same station, ids end in .0, some have 'test','charging','divvy 001' and 'divvy cassette' in their names and ids.
+```{r}
+df_startstations = combined_data %>% select(start_station_name, start_station_id) %>% distinct(start_station_name, start_station_id) %>% arrange(start_station_id)
+df_endstations = combined_data %>% select(end_station_name, end_station_id) %>% distinct (end_station_name, end_station_id) %>% arrange(end_station_id)
+
+head(df_startstations)
+head(df_endstations)
+```
+
+Delete rows that fit our criteria.
+```{r}
+combined_data = combined_data %>% filter(!grepl('test|charging|divvy cassette|divvy 001', tolower(start_station_name)) &
+                           !grepl('test|charging|divvy cassette|divvy 001', tolower(start_station_id))) %>%
+  filter(!grepl('test|charging|divvy cassette|divvy 001', tolower(end_station_name)) &
+           !grepl('test|charging|divvy cassette|divvy 001', tolower(end_station_id)))
+```
+
+Replace names and ids ending in .0 with empty strings.
+```{r}
+combined_data = combined_data %>% mutate(
+  start_station_name = gsub("\\.0$", "", start_station_name),
+  start_station_id = gsub("\\.0$", "", start_station_id),
+  end_station_name = gsub("\\.0$", "", end_station_name),
+  end_station_id = gsub("\\.0$", "", end_station_id)
+)
+```
+
+
+# ANALYZE AND SHARE
+
+Return a count of trips made by casuals and members
+```{r}
+gb_mc = combined_data %>% group_by(member_casual) %>% summarise(count = n())
+gb_mc
+```
+
+Return a count of trips made by casuals and members on different bikes. Quick viz for better clarity.
+```{r}
+gb_mc_rt = combined_data %>% group_by(member_casual, rideable_type) %>% summarise(count = n())
+gb_mc_rt
+```
+
+```{r}
+mc_rtplot = combined_data %>% group_by(member_casual, rideable_type) %>% summarise(n_rides = n()) %>%
+  ggplot(aes(x = member_casual, y = n_rides, fill = rideable_type)) +
+  geom_col(position = "dodge")
+mc_rtplot
+```
+
+
+Create a plot to visualize the average trip duration between members and casuals
+```{r}
+avgtrip_plot = combined_data %>% group_by(member_casual) %>% summarise(avg_trip = mean(time_diff_sec)) %>% 
+  ggplot(aes(x = member_casual,y = avg_trip, fill = member_casual)) +
+  geom_bar(stat = "identity", width = 0.25) +
+  geom_text(aes(label = round(avg_trip,2), vjust = -0.5))
+avgtrip_plot
+```
+
+Visualize it again except docked_bike bike type is removed.
+```{r}
+avgtrip_plot2 = combined_data %>% filter(rideable_type != "docked_bike") %>% group_by(member_casual) %>% summarise(avg_trip = mean(time_diff_sec)) %>% 
+  ggplot(aes(x = member_casual,y = avg_trip, fill = member_casual)) +
+  geom_bar(stat = "identity", width = 0.25) +
+  geom_text(aes(label = round(avg_trip,2), vjust = -0.5))
+avgtrip_plot2
+```
+
+Visualize the number of trips taken per month between members and casuals
+```{r}
+monthtrip_plot = combined_data %>% group_by(member_casual, start_month) %>% summarise(n_rides = n()) %>%
+  ggplot(aes(x = start_month, y = n_rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  geom_text(aes(label = sprintf("%sK", comma(round(n_rides/1000))), vjust = -0.5))
+monthtrip_plot
+```
+
+Visualize the number of trips taken per weekday between members and casuals
+```{r}
+weekday_names <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+daytrip_plot = combined_data %>% group_by(member_casual, start_day) %>% summarise(n_rides = n()) %>% 
+  ggplot(aes(x = start_day, y = n_rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  geom_text(aes(label = sprintf("%sK", comma(round(n_rides/1000))), vjust = -0.5)) +
+  scale_x_discrete(labels = weekday_names)
+daytrip_plot
+```
+
+Visualize the number of trips taken per hour between members and casuals
+```{r}
+hourtrip_plot = combined_data %>% group_by(member_casual, start_hour) %>% summarise(n_rides = n()) %>% 
+  ggplot(aes(x = start_hour, y = n_rides, fill = member_casual)) +
+  geom_col(position = "dodge")
+hourtrip_plot
+```
+
+Taking a look at the most popular start and end stations
+```{r}
+gb_mc_startstation = combined_data %>% group_by(member_casual, start_station_name) %>% summarise(n_rides = n()) %>% arrange(desc(n_rides))
+head(gb_mc_startstation)
+```
+
+```{r}
+startstation_plot <- combined_data %>% 
+  filter(!is.na(start_station_name) & !is.na(member_casual) & start_station_name != "" & member_casual != "") %>% 
+  group_by(member_casual, start_station_name) %>% 
+  summarise(n_rides = n()) %>% 
+  arrange(desc(n_rides)) %>%
+  mutate(rank = dense_rank(desc(n_rides))) %>% # add a rank column
+  filter(rank <= 10) %>% # filter for the top 10 stations
+  ggplot(aes(x = reorder(start_station_name, n_rides), y = n_rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  labs(x = "Start Station", y = "Number of Rides", fill = "User Type") +
+  scale_fill_manual(values = c("#FDB813", "#0072B2")) + # set custom colors
+  theme_minimal() + # apply a minimal theme
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +# rotate x-axis labels
+  coord_flip()
+startstation_plot
+```
+
+```{r}
+endstation_plot <- combined_data %>% 
+  filter(!is.na(end_station_name) & !is.na(member_casual) & end_station_name != "" & member_casual != "") %>% 
+  group_by(member_casual, end_station_name) %>% 
+  summarise(n_rides = n()) %>% 
+  arrange(desc(n_rides)) %>%
+  mutate(rank = dense_rank(desc(n_rides))) %>% # add a rank column
+  filter(rank <= 10) %>% # filter for the top 10 stations
+  ggplot(aes(x = reorder(end_station_name, n_rides), y = n_rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  labs(x = "End Station", y = "Number of Rides", fill = "User Type") +
+  scale_fill_manual(values = c("#FDB813", "#0072B2")) + # set custom colors
+  theme_minimal() + # apply a minimal theme
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +# rotate x-axis labels
+  coord_flip()
+endstation_plot
+```
+
+# MAIN TAKEAWAYS AND RECOMMENDATIONS
+
+Both Casuals and Members ride electric bikes more so than classic bikes; We should have more electric bikes available especially for members so more casuals become members.
+
+Casuals take longer trips than Members; increase the amount Casuals have to pay the longer they ride.
+
+Trips by Casuals are most popular during the summer season along the coast of Lake Michigan on weekends and the afternoons; Create a campaign that uses these times and locations.
+
+
+
+
+## Other Statistical Analyses
+
+T-Test to determine whether or not there is a significant difference between the two means
+```{r}
+t.test(time_diff_sec ~ member_casual, data = combined_data)
+```
+
+ANOVA test to determine if there is a statistical significant difference in means for more than 2 groups
+```{r}
+aov_model = aov(time_diff_sec ~ rideable_type, data = combined_data)
+aov_model
+summary(aov_model)
+```
+
+Create a dataframe suitable for classification log model. We select all the columns that we want and create dummy columns for our categorical variables and deleting a column for each group of dummy variables to prevent the dummy variable trap.
+```{r}
+df_glm = combined_data %>% select(rideable_type, member_casual, time_diff_sec, start_month, start_day, start_hour) %>%
+  dummy_cols(select_columns = c("member_casual","rideable_type","start_month","start_day","start_hour"), remove_first_dummy = FALSE, remove_selected_columns = TRUE) %>%
+  select(-c("member_casual_member","rideable_type_docked_bike","start_month_01","start_day_Monday","start_hour_00"))
+```
+
+Perform a logistic regression model with our dependent variable being whether or not they are a casual or member. 
+```{r}
+glm_model <- glm(member_casual_casual ~ ., data = df_glm, family = "binomial")
+summary(glm_model)
+```
+
+Explore the top variables based on the absolute value of their coefficient estimates of the glm model
+```{r}
+coefs = coef(glm_model)
+abs_coefs = abs(coefs)
+sorted_abscoefs = sort(abs_coefs, decreasing = TRUE)
+top_vars <- data.frame(variable = names(coefs), coefficient = coefs, abs_coefficient = abs_coefs)
+top_vars <- top_vars[order(-top_vars$abs_coefficient),][1:10,]
+top_vars
+```
+
+Correlation test to identify pairs w/ strong relations
+```{r}
+cor_df_glm = cor(df_glm)
+cor_df_glm
+```
+
+
+Create a heatmap of our correlation dataframe. Not too useful since we're mainly using time variables.
+```{r}
+cor_df_glm = cor(df_glm)
+melted_cor_df_glm = melt(cor_df_glm) # convert correlation matrix to long format
+ggplot(melted_cor_df_glm, aes(x = Var1, y = Var2, fill = value)) + # create heatmap
+  geom_tile() +
+  scale_fill_gradient2(low = "blue", mid = "white", high = "red", midpoint = 0, limit = c(-1, 1), name = "Correlation") + # set color scale
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) # rotate x-axis labels for readability
+
+```
+
+I tried to create a geographical map by assigning a zipcode using the lat/lng fields to each bike trip through Google Maps API. I used a for loop and it would crash even when I did it in batches. Luckily, tableau supports spatial joins where you give it a spatial file and it would connect with your lat/lng fields and you can easily create a map.
+
