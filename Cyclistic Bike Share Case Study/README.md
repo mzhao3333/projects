@@ -20,3 +20,6 @@ The data is made available by Motivate International Inc. under this [license](h
 
 Coincidentally, this is an interesting dataset for me to work with as I currently reside in Chicago and I see these divvy bikes quite often.
 
+[Click here to see the rmarkdown version in html format](https://rawcdn.githack.com/mzhao3333/projects/d3a1851fe8c4a34329048032f8786845866a7a4b/Cyclistic%20Bike%20Share%20Case%20Study/R%20Scripts/Cyclistic-Bike-Share-Case-Study-GitHub.html)
+
+[Click here to see the tableau public visualization](https://public.tableau.com/app/profile/michael.zhao5952/viz/CyclisticBikeShareCaseStudy2022/TitlePage)
