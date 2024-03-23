@@ -32,8 +32,8 @@ Python/Jupyter Notebook
 
 ## Table of Contents
 
-- [Setup](## Setup)
-    - [Importing Libraries and Working Directory](### Importing Libraries and Working Directory)
+- [Setup](#Setup)
+    - [Importing Libraries and Working Directory](#importing-libraries-and-working-directory)
 - [Data Loading]
     - [Loading CSV Files and Dataframes Dictionary]
 - [Exploratory Data Analysis (EDA)]
@@ -96,7 +96,7 @@ In order to make the data accessible and ready for examination, we need to trans
 
 We create a variable to collect the filenames of all CSV files in our working directory. Then we create an empty dictionary in order to store the dataframes and create a for loop that loads each CSV file into a DataFrame and store them in our dictionary. One challenge that came up was that not all csv files were encoded the same way so we had to use try/except to account for other encodings.
 
-![Dataframe Dictionary Keys](./images/Loading CSV Files and Dataframes Dictionary 1.png)
+![Dataframe Dictionary Keys](./images/Loading%20CSV%20Files%20and%20Dataframes%20Dictionary%201.png)
 
 ## Exploratory Data Analysis (EDA)
 
