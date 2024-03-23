@@ -583,6 +583,6 @@ We should evaluate the supervision strategies for our managers and apply their t
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://michaelkzhao.wixsite.com/portfolio)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/michaelkzhao/)
-[![Tableau](https://img.shields.io/badge/Tableau-ff7043?style=for-the-badge&logo=Tableau&logoColor=white)]([Your-Tableau-URL](https://public.tableau.com/app/profile/michaelkzhao/vizzes)https://public.tableau.com/app/profile/michaelkzhao/vizzes)
+[![Tableau](https://img.shields.io/badge/Tableau-ff7043?style=for-the-badge&logo=Tableau&logoColor=white)](https://public.tableau.com/app/profile/michaelkzhao/vizzes)
 
 
