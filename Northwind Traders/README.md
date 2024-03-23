@@ -32,8 +32,8 @@ Python/Jupyter Notebook
 
 ## Table of Contents
 
-- [Setup]
-    - [Importing Libraries and Working Directory]
+- [Setup](## Setup)
+    - [Importing Libraries and Working Directory](### Importing Libraries and Working Directory)
 - [Data Loading]
     - [Loading CSV Files and Dataframes Dictionary]
 - [Exploratory Data Analysis (EDA)]
@@ -96,7 +96,7 @@ In order to make the data accessible and ready for examination, we need to trans
 
 We create a variable to collect the filenames of all CSV files in our working directory. Then we create an empty dictionary in order to store the dataframes and create a for loop that loads each CSV file into a DataFrame and store them in our dictionary. One challenge that came up was that not all csv files were encoded the same way so we had to use try/except to account for other encodings.
 
-![Dataframe Dictionary Keys](link_to_your_ERD_image_here)
+![Dataframe Dictionary Keys](./images/Loading CSV Files and Dataframes Dictionary 1.png)
 
 ## Exploratory Data Analysis (EDA)
 
@@ -132,7 +132,7 @@ categoryID	categoryName	description
 
 We conducted thorough checks for missing values, duplicate entries, inconsistent date formats, and potential outliers. To do this, we used the .isnull() function to check for NaN values, the .duplicated() function to check for duplicates, created a function that checks our date columns for certain date formats, and created a bar graph for every categorical variable in our dataset.
 
-![Data Quality Checks 1](link_to_your_ERD_image_here)
+![Data Quality Checks 1](./images/Data Quality Checks 1)
 
 ![Data Quality Checks 2](link_to_your_ERD_image_here)
 
@@ -583,3 +583,6 @@ We should evaluate the supervision strategies for our managers and apply their t
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://michaelkzhao.wixsite.com/portfolio)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/michaelkzhao/)
+[![Tableau](https://img.shields.io/badge/Tableau-ff7043?style=for-the-badge&logo=Tableau&logoColor=white)]([Your-Tableau-URL](https://public.tableau.com/app/profile/michaelkzhao/vizzes)https://public.tableau.com/app/profile/michaelkzhao/vizzes)
+
+
