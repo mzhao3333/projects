@@ -38,7 +38,7 @@ The purpose of this project is to perform data analysis on a marketing campaign 
 
 Tools used: Python/Jupyter Notebook
 
-[Link to Project](main/MarketingCampaign)
+[Link to Project](MarketingCampaign)
 
 ## SQL CaseStudies
 
