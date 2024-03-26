@@ -66,7 +66,7 @@ Python/Jupyter Notebook
     - [Data Dictionary](#data-dictionary)
 
 
-## Setup
+## Setup     [Return to Table of Contents](#table-of-contents)
 
 Preparing our Python environment with the necessary libraries and correct working directory is fundamental as it allows for data manipulation, analysis, visualization, and access to our resources.
 
@@ -142,7 +142,6 @@ We conducted thorough checks for missing values, duplicate entries, inconsistent
  'shippedDate': "Formats detected: {'%Y-%m-%d': '2013-07-16'} and nulls",
  'orderDate': 'Single format detected: 2013-07-04'}
 ```
-[Return to Table of Contents](#table-of-contents)
 
 ### Descriptive Statistics
 
