@@ -12,7 +12,7 @@ Tools Used: Python/Jupyter Notebook
 
 A case study from the Google Data Analytics Professional Certificate where the goal is to design a strategy to convert casual riders into annual members based on insights from a fictional bike-share company in Chicago.
 
-Tools used: R/Rmarkdown, Tableau
+Tools used: R/Rmarkdown, MySQL, Tableau
 
 [Link to Project](Cyclistic%20Bike%20Share%20Case%20Study)
 
@@ -20,7 +20,7 @@ Tools used: R/Rmarkdown, Tableau
 
 The goal is to explore a dataset containing 911 calls in South-East Pennsylvania by analyzing the number of emergencies by zipcode, township, different types of emergencies, and emergencies by the hour.
 
-Tools used: SQL, Tableau, Python/Jupyter Notebook
+Tools used: MS SQL, Tableau, Python/Jupyter Notebook
 
 [Link to Project](911Project)
 
@@ -28,7 +28,7 @@ Tools used: SQL, Tableau, Python/Jupyter Notebook
 
 The aim of this project is to conduct a comprehensive analysis on consumer complaints for different banks in the United States by looking at the complaints per prodocut, complaints over time, map of complaints in the U.S, and banks with the most complaints.
 
-Tools used: SQL, Tableau
+Tools used: MS SQL, Tableau
 
 [Link to Project](ConsumerComplaintsProject)
 
