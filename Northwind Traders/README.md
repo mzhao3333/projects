@@ -66,7 +66,8 @@ Python/Jupyter Notebook
     - [Data Dictionary](#data-dictionary)
 
 
-## Setup     [Return to Table of Contents](#table-of-contents)
+## Setup
+[Return to Table of Contents](#table-of-contents)
 
 Preparing our Python environment with the necessary libraries and correct working directory is fundamental as it allows for data manipulation, analysis, visualization, and access to our resources.
 
