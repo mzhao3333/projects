@@ -16,7 +16,7 @@ This dataset contains sales & order data for Northwind Traders, a ficticious gou
 
 ## Entity Relationship Diagram (ERD)
 
-![Entity Relationship Diagram](link_to_your_ERD_image_here)
+![Entity Relationship Diagram](./images/Entity%20Relationship%20Diagram%20(2).jpg)
 
 This visualization is crucial for grasping the data's complexity and will guide our exploratory and in-depth analysis.
 
