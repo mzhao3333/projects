@@ -142,6 +142,7 @@ We conducted thorough checks for missing values, duplicate entries, inconsistent
  'shippedDate': "Formats detected: {'%Y-%m-%d': '2013-07-16'} and nulls",
  'orderDate': 'Single format detected: 2013-07-04'}
 ```
+[Return to Table of Contents](#table-of-contents)
 
 ### Descriptive Statistics
 
