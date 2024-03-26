@@ -89,6 +89,7 @@ In this project, we utilize a variety of Python libraries, each serving a distin
 To ensure that our code runs smoothly and accesses the correct files, we also check and set the working directory which allows our code to access data files and other resources without specifying absolute paths.
 
 ## Data Loading
+[Return to Table of Contents](#table-of-contents)
 
 In order to make the data accessible and ready for examination, we need to transform our raw data into a manageable and analyzable format.
 
@@ -99,6 +100,7 @@ We create a variable to collect the filenames of all CSV files in our working di
 ![Dataframe Dictionary Keys](./images/Loading%20CSV%20Files%20and%20Dataframes%20Dictionary%201.png)
 
 ## Exploratory Data Analysis (EDA)
+[Return to Table of Contents](#table-of-contents)
 
 EDA is the first step in understanding our data and what it contains such as trends and patterns. This will help guide our next steps in analysis and help us ask the right questions.
 
@@ -204,6 +206,7 @@ unitPrice_od	discount_od	quantity_od	SalesRevenue
 ```
 
 ## Merging Dataframes
+[Return to Table of Contents](#table-of-contents)
 
 Merging dataframes is fundamental in data analysis and preprocessing and enables us to combine information from different sources into a single dataset. This allows us to have a comprehensive view of the data, more in-depth analysis, and having more features for modeling. Merging helps us avoid redundancy and simplifies the data manipulation flow.
 
@@ -265,6 +268,7 @@ final_df = (
 ```
 
 ## In-depth Analysis and Insights
+[Return to Table of Contents](#table-of-contents)
 
 This section takes a deeper look into the dataset and illuminates key findings in sales trends, customer behaviors, operational efficiencies, and employee performance. 
 
@@ -360,6 +364,7 @@ ANOVA P-value: 0.00789613942259892
 ```
 
 ## Time Series Analysis
+[Return to Table of Contents](#table-of-contents)
 
 This section focuses on analyzing sales trends and forecasting future sales using statistical models. We explore how sales revenue changed over time, identify patterns, and predict future sales based on historical data.
 
@@ -406,6 +411,7 @@ The SARIMAX model was our best model by far when we compared their root mean squ
 Due to the fact that our dataset has less than 2 years of data, our SARIMAX model that forecasts the next 2 years is probably inaccurate and unreliable. I would expect a steady overall increase in sales revenue over time.
 
 ## Machine Learning Models
+[Return to Table of Contents](#table-of-contents)
 
 This section presents the applications of Linear Regression and Decision Trees and Random Forest to have deeper insights into the data. The models aim to uncover patterns, predict future trends, and provide recommendations for decisions.
 
@@ -517,6 +523,7 @@ Upon reflection, our dataset presents certain challenges for predictive machine 
 
 
 ## Conclusions and Insights
+[Return to Table of Contents](#table-of-contents)
 
 This section synthesizes the project's findings, outlines actionable recommendations based on the analysis, and proposes directions for future research.
 
@@ -537,6 +544,7 @@ We should tailor discounts more effectively by giving them to high valued custom
 We should evaluate the supervision strategies for our managers and apply their techniques for the rest of our managers.
 
 ## Appendicies
+[Return to Table of Contents](#table-of-contents)
 
 ### Data Dictionary
 | Table         | Field          | Description                                                                 | Data Type |
