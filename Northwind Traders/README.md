@@ -348,6 +348,7 @@ There doesn't seem to be a strong pattern or seasonality of the quantity of popu
 ![Operational Insights 5](./images/Operational%20Insights%205.png)
 
 Exploring the top 10 cities by sales revenue tells us that Graz from Austria is tied with Boise from US for second place with Cunewalde from Germany being first.
+
 ![Operational Insights 6](./images/Operational%20Insights%206.png)
 
 ### Employee Performance Evaluation
@@ -371,6 +372,7 @@ This section focuses on analyzing sales trends and forecasting future sales usin
 ### Sales Analysis Over Time
 
 We visualized our sales revenue over time aggregated with different time periods to explore trends and seasonal patterns. Our monthly plot shows that the business was growing slowly, then stagnating, and had a meteoric rise from 2014-11 to 2015-04 then had a sharp drop due to data collection ending.
+
 ![Sales Analysis Over Time 1](./images/Sales%20Analysis%20Over%20Time%201.png)
 
 ### Forecasting
@@ -406,6 +408,7 @@ AutoRegressive Integrated Moving Average (ARIMA) Model is a popular statistical 
 For our ARIMA model parameters, we use our PACF, differencing, and ACF values. We experimented with different parameters, using auto_arima which performs a stepwise search to minimize aic, and using the SARIMAX model which also considers seasonality and exogenous factors.
 
 The SARIMAX model was our best model by far when we compared their root mean squared error values. The next step is to apply the model to our original dataset by first applying detrending, fitting the SARIMAX model, forecast the future values, and then inverse the detrending process. 
+
 ![Forecasting 3](./images/Forecasting%203.png)
 
 Due to the fact that our dataset has less than 2 years of data, our SARIMAX model that forecasts the next 2 years is probably inaccurate and unreliable. I would expect a steady overall increase in sales revenue over time.
@@ -517,6 +520,7 @@ Random Forest Test MSE: 765452.701145029
 ```
 
 We can also take a look at our forest model's feature importance which allows us to see a quantitative measure of the impact each feature has on the model's prediction. It ranks features based on how useful they are at predicting the target variable.
+
 ![Decision Trees and Random Forest 1](./images/Decision%20Trees%20and%20Random%20Forest%201.png)
 
 Upon reflection, our dataset presents certain challenges for predictive machine learning primarily due to limitations in the predictive power of the available features. However, our tree-based models can be further refined through pruning, adjusting parameters, enforcing constraints, cross-validation, better feature selection and dimensionality reduction, and/or stacking and boosting.
