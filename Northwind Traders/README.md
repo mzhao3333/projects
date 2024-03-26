@@ -3,7 +3,7 @@
 
 Dataset: [Northwind Traders Data from Maven Analytics](https://mavenanalytics.io/data-playground?search=northwind)
 
-For a thorough understanding and a step-by-step guide through the analysis, including code and detailed visualizations, refer to the [full Jupyter notebook](URL_to_your_notebook).
+For a thorough understanding and a step-by-step guide through the analysis, including code and detailed visualizations, refer to the [full Jupyter notebook](./jupyter%20notebook/Northwind%20Traders%20Analysis.ipynb).
 
 ## Navigating This README
 
