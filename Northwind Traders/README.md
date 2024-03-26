@@ -276,21 +276,21 @@ This section takes a deeper look into the dataset and illuminates key findings i
 
 We took a look at our categories by sales revenue and the top 20% of products by sales revenue. Wine and Cheese generated a lot of revenue which makes sense as the tradition and practice of pairing wine and cheese dates back to hundreds of years ago. 
 
-![Sales Revenue Analysis 1](./Sales%20Revenue%20Analysis%201.png)
+![Sales Revenue Analysis 1](./images/Sales%20Revenue%20Analysis%201.png)
 
 Plotting Côte de Blaye, our most popular wine, on a sales over time plot shows that it is most popular during the start and end of years as it coincides with popular holidays.
 
-![Sales Revenue Analysis 2](./Sales%20Revenue%20Analysis%202.png)
+![Sales Revenue Analysis 2](./images/Sales%20Revenue%20Analysis%202.png)
 
 Performing an independent samples statistical t-test between the sales revenue of discounted and non-discounted groups checks if the differences between them are statistically different. In our case, our p-value is less than 0.05 which means that any observed difference could occur by random chance and we can't conclude that discounts impact revenue significantly.
 
-![Sales Revenue Analysis 3](./Sales%20Revenue%20Analysis%203.png)
+![Sales Revenue Analysis 3](./images/Sales%20Revenue%20Analysis%203.png)
 
 We utilized Apriori to conduct a market basket analysis in order to identify frequent itemsets and generating association rules among products in customer orders. By grouping by orderID and aggregating productName_prod, we were able to create baskets of products purhcased together within the same transaction. 
 
 One of our rules state that the frequency of Sirop d'érable and Sir Rodney's Scones appearing together is 7 times higher than if they were alone and 33% of people who buy Sirop also buy Sir Rodeny.
 
-![Sales Revenue Analysis 4](./Sales%20Revenue%20Analysis%204.png)
+![Sales Revenue Analysis 4](./images/Sales%20Revenue%20Analysis%204.png)
 
 ### Customer Insights 
 
@@ -354,7 +354,7 @@ Exploring the top 10 cities by sales revenue tells us that Graz from Austria is 
 
 We visualized sales data to rank employees by performance. Unsurprisingly, the number of orders handled by employees is proportional to the amount of sales revenue generated. Margaret Peakcock has the most orders and revenue generated followed by Janet and Nancy.
 
-![Employee Performance Evaluation 1](./Employee%20Performance%20Evaluation%201.png)
+![Employee Performance Evaluation 1](./images/Employee%20Performance%20Evaluation%201.png)
 
 We explored whether or not supervision had an impact on Sales performance by running an ANOVA test to compare the means of the aggregate sales figures per employee across different supervisors. Our result tells us that the difference in sales performance across different supervisors' groups are statistically significant and suggests that supervision does impact an employee's total sales revenue.
 
