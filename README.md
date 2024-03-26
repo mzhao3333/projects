@@ -14,7 +14,7 @@ A case study from the Google Data Analytics Professional Certificate where the g
 
 Tools used: R/Rmarkdown, Tableau
 
-[Link to Project](/tree/main/Cyclistic%20Bike%20Share%20Case%20Study)
+[Link to Project](Cyclistic%20Bike%20Share%20Case%20Study)
 
 ## 911 Project
 
@@ -22,7 +22,7 @@ The goal is to explore a dataset containing 911 calls in South-East Pennsylvania
 
 Tools used: SQL, Tableau, Python/Jupyter Notebook
 
-[Link to Project](/tree/main/911Project)
+[Link to Project](911Project)
 
 ## Consumer Complaints Project
 
@@ -30,7 +30,7 @@ The aim of this project is to conduct a comprehensive analysis on consumer compl
 
 Tools used: SQL, Tableau
 
-[Link to Project](/tree/main/ConsumerComplaintsProject)
+[Link to Project](ConsumerComplaintsProject)
 
 ## Marketing Campaign Project
 
@@ -38,13 +38,13 @@ The purpose of this project is to perform data analysis on a marketing campaign 
 
 Tools used: Python/Jupyter Notebook
 
-[Link to Project](/tree/main/MarketingCampaign)
+[Link to Project](main/MarketingCampaign)
 
 ## SQL CaseStudies
 
 Case studies from 8weeksqlchallenge.com where I practiced solving SQL problems
 
-[Link to Project](/tree/main/SQL%20CaseStudies)
+[Link to Project](SQL%20CaseStudies)
 
 
 
