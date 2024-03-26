@@ -6,7 +6,7 @@ The primary objective of this project is to conduct a comprehensive analysis of 
 
 Tools Used: Python/Jupyter Notebook
 
-[Link to Project](./tree/main/Northwind%20Traders)
+[Link to Project](Northwind%20Traders)
 
 ## Cyclistic Bike Share Case Study
 
