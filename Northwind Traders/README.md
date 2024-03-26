@@ -64,8 +64,7 @@ Python/Jupyter Notebook
     - [Recommendations based on analysis](#recommendations-based-on-analysis)
 - [Appendicies](#appendicies)
     - [Data Dictionary](#data-dictionary)
-    - [Code Snippets](#code-snippets)
-    - [References](#references)
+
 
 ## Setup
 
@@ -539,44 +538,45 @@ We should evaluate the supervision strategies for our managers and apply their t
 ## Appendicies
 
 ### Data Dictionary
-| Table         | Field          | Description |
-|---------------|----------------|-------------|
-| orders        | orderID        | Unique identifier for each order |
-| orders        | customerID     | The customer who placed the order |
-| orders        | employeeID     | The employee who processed the order |
-| orders        | orderDate      | The date when the order was placed |
-| orders        | requiredDate   | The date when the customer requested the order to be delivered |
-| orders        | shippedDate    | The date when the order was shipped |
-| orders        | shipperID      | The ID of the shipping company used for the order |
-| orders        | freight        | The shipping cost for the order (USD) |
-| order_details | orderID        | The ID of the order this detail belongs to |
-| order_details | productID      | The ID of the product being ordered |
-| order_details | unitPrice      | The price per unit of the product at the time the order was placed (USD - discount not included) |
-| order_details | quantity       | The number of units being ordered |
-| order_details | discount       | The discount percentage applied to the price per unit |
-| customers     | customerID     | Unique identifier for each customer |
-| customers     | companyName    | The name of the customer's company |
-| customers     | contactName    | The name of the primary contact for the customer |
-| customers     | contactTitle   | The job title of the primary contact for the customer |
-| customers     | city           | The city where the customer is located |
-| customers     | country        | The country where the customer is located |
-| products      | productID      | Unique identifier for each product |
-| products      | productName    | The name of the product |
-| products      | quantityPerUnit| The quantity of the product per package |
-| products      | unitPrice      | The current price per unit of the product (USD) |
-| products      | discontinued   | Indicates with a 1 if the product has been discontinued |
-| products      | categoryID     | The ID of the category the product belongs to |
-| categories    | categoryID     | Unique identifier for each product category |
-| categories    | categoryName   | The name of the category |
-| categories    | description    | A description of the category and its products |
-| employees     | employeeID     | Unique identifier for each employee |
-| employees     | employeeName   | Full name of the employee |
-| employees     | title          | The employee's job title |
-| employees     | city           | The city where the employee works |
-| employees     | country        | The country where the employee works |
-| employees     | reportsTo      | The ID of the employee's manager |
-| shippers      | shipperID      | Unique identifier for each shipper |
-| shippers      | companyName    | The name of the company that provides shipping services |
+| Table         | Field          | Description                                                                 | Data Type |
+|---------------|----------------|-----------------------------------------------------------------------------|-----------|
+| orders        | orderID        | Unique identifier for each order                                            | `int64`   |
+| orders        | customerID     | The customer who placed the order                                           | `object`  |
+| orders        | employeeID     | The employee who processed the order                                        | `int64`   |
+| orders        | orderDate      | The date when the order was placed                                          | `object`  |
+| orders        | requiredDate   | The date when the customer requested the order to be delivered              | `object`  |
+| orders        | shippedDate    | The date when the order was shipped                                         | `object`  |
+| orders        | shipperID      | The ID of the shipping company used for the order                           | `int64`   |
+| orders        | freight        | The shipping cost for the order (USD)                                       | `float64` |
+| order_details | orderID        | The ID of the order this detail belongs to                                  | `int64`   |
+| order_details | productID      | The ID of the product being ordered                                         | `int64`   |
+| order_details | unitPrice      | The price per unit of the product at the time the order was placed (USD - discount not included) | `float64` |
+| order_details | quantity       | The number of units being ordered                                           | `int64`   |
+| order_details | discount       | The discount percentage applied to the price per unit                       | `float64` |
+| customers     | customerID     | Unique identifier for each customer                                         | `object`  |
+| customers     | companyName    | The name of the customer's company                                          | `object`  |
+| customers     | contactName    | The name of the primary contact for the customer                            | `object`  |
+| customers     | contactTitle   | The job title of the primary contact for the customer                       | `object`  |
+| customers     | city           | The city where the customer is located                                      | `object`  |
+| customers     | country        | The country where the customer is located                                   | `object`  |
+| products      | productID      | Unique identifier for each product                                          | `int64`   |
+| products      | productName    | The name of the product                                                     | `object`  |
+| products      | quantityPerUnit| The quantity of the product per package                                     | `object`  |
+| products      | unitPrice      | The current price per unit of the product (USD)                             | `float64` |
+| products      | discontinued   | Indicates with a 1 if the product has been discontinued                     | `int64`   |
+| products      | categoryID     | The ID of the category the product belongs to                               | `int64`   |
+| categories    | categoryID     | Unique identifier for each product category                                 | `int64`   |
+| categories    | categoryName   | The name of the category                                                    | `object`  |
+| categories    | description    | A description of the category and its products                              | `object`  |
+| employees     | employeeID     | Unique identifier for each employee                                         | `int64`   |
+| employees     | employeeName   | Full name of the employee                                                   | `object`  |
+| employees     | title          | The employee's job title                                                    | `object`  |
+| employees     | city           | The city where the employee works                                           | `object`  |
+| employees     | country        | The country where the employee works                                        | `object`  |
+| employees     | reportsTo      | The ID of the employee's manager                                            | `float64` |
+| shippers      | shipperID      | Unique identifier for each shipper                                          | `int64`   |
+| shippers      | companyName    | The name of the company that provides shipping services                     | `object`  |
+
 
 
 
