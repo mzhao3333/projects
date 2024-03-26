@@ -134,11 +134,11 @@ categoryID	categoryName	description
 
 We conducted thorough checks for missing values, duplicate entries, inconsistent date formats, and potential outliers. To do this, we used the .isnull() function to check for NaN values, the .duplicated() function to check for duplicates, created a function that checks our date columns for certain date formats, and created a bar graph for every categorical variable in our dataset.
 
-![Data Quality Checks 1](./images/Data Quality Checks 1)
+![Data Quality Checks 1](./images/Data%20Quality%20Checks%201.png)
 
-![Data Quality Checks 2](link_to_your_ERD_image_here)
+![Data Quality Checks 2](./images/Data%20Quality%20Checks%202.png)
 
-![Data Quality Checks 3](link_to_your_ERD_image_here)
+![Data Quality Checks 3](./images/Data%20Quality%20Checks%203.png)
 
 ```
 {'requiredDate': 'Single format detected: 2013-08-01',
@@ -168,9 +168,9 @@ max	11077.000000	77.000000	263.500000	130.000000	0.250000
 
 To uncover relationships between variables and detect patterns or anomalies, we created a correlation heatmap to illustrate the strength and direction of relationships between numerical features.
 
-![Visual Explorations](link_to_your_ERD_image_here)
+![Visual Explorations](./images/Visual%20Explorations.png)
 
-![Visual Explorations2](link_to_your_ERD_image_here)
+![Visual Explorations2](./images/Visual%20Explorations%202.png)
 
 ## Data Cleaning and Preparation
 
@@ -184,7 +184,7 @@ The shippedDates missing values represents the date on which an order has been s
 
 The reportsTo_emp column is a hierarchical reporting structure within the organization and the missing value indicates an individual at the top of the hierarchy who ddoes not report to anyone.
 
-![Visual Explorations2](link_to_your_ERD_image_here)
+![Handling Missing Values 1](./images/Handling%20Missing%20Values.png)
 
 ### Feature Engineering
 
@@ -276,27 +276,27 @@ This section takes a deeper look into the dataset and illuminates key findings i
 
 We took a look at our categories by sales revenue and the top 20% of products by sales revenue. Wine and Cheese generated a lot of revenue which makes sense as the tradition and practice of pairing wine and cheese dates back to hundreds of years ago. 
 
-![Sales Revenue Analysis 1](link_to_your_ERD_image_here)
+![Sales Revenue Analysis 1](./Sales%20Revenue%20Analysis%201.png)
 
 Plotting Côte de Blaye, our most popular wine, on a sales over time plot shows that it is most popular during the start and end of years as it coincides with popular holidays.
 
-![Sales Revenue Analysis 2](link_to_your_ERD_image_here)
+![Sales Revenue Analysis 2](./Sales%20Revenue%20Analysis%202.png)
 
 Performing an independent samples statistical t-test between the sales revenue of discounted and non-discounted groups checks if the differences between them are statistically different. In our case, our p-value is less than 0.05 which means that any observed difference could occur by random chance and we can't conclude that discounts impact revenue significantly.
 
-![Sales Revenue Analysis 3](link_to_your_ERD_image_here)
+![Sales Revenue Analysis 3](./Sales%20Revenue%20Analysis%203.png)
 
 We utilized Apriori to conduct a market basket analysis in order to identify frequent itemsets and generating association rules among products in customer orders. By grouping by orderID and aggregating productName_prod, we were able to create baskets of products purhcased together within the same transaction. 
 
 One of our rules state that the frequency of Sirop d'érable and Sir Rodney's Scones appearing together is 7 times higher than if they were alone and 33% of people who buy Sirop also buy Sir Rodeny.
 
-![Sales Revenue Analysis 4](link_to_your_ERD_image_here)
+![Sales Revenue Analysis 4](./Sales%20Revenue%20Analysis%204.png)
 
 ### Customer Insights 
 
 We used clustering to segment customers based on their order frequency, average order value, and country. To perform this, we aggregated these features by customerID, one-hot encode country names, normalized our data with StandardScaler (Z-score normalization), found our elbow point of optimal clusters, and used K-Means Clustering to create our clusters.
 
-![Customer Insights 1](link_to_your_ERD_image_here)
+![Customer Insights 1](./images/Customer%20Insights%201.png)
 
 After creating our clusters, we aggregated our data and included only numerical columns.
 
@@ -321,7 +321,7 @@ Cluster
 
 Taking a look at Cluster 13 with the highest order frequency and average order value, we can see that they are ERNSH and PICCO from Austria. We can possibly designate these customers as VIP and assign them a personal manager or support line.
 
-![Customer Insights 2](link_to_your_ERD_image_here)
+![Customer Insights 2](./images/Customer%20Insights%202.png)
 
 ### Operational Insights
 
@@ -329,32 +329,32 @@ We assessed operational efficiency by analyzing the time between order placement
 
 Generally, it takes less than 2 weeks for an order to be shipped from their order placement date.
 
-![Operational Insights 1](link_to_your_ERD_image_here)
+![Operational Insights 1](./images/Operational%20Insights%201.png)
 
 There are only 3 distinct durations between order placement and the required dates between all orders. This suggests that the company is aligning its delivery schedule with a weekly cycle and only allowing the customer to select from 3 required date options from their order date (2 weeks, 4 weeks, or 6 weeks).
 
-![Operational Insights 2](link_to_your_ERD_image_here)
+![Operational Insights 2](./images/Operational%20Insights%202.png)
 
 We can see that most of our orders have a positive value between required - shipped date meaning that a majority of our orders are shipped way before their required date.
 
-![Operational Insights 3](link_to_your_ERD_image_here)
+![Operational Insights 3](./images/Operational%20Insights%203.png)
 
 We compared the ratio of late orders for each shipping company and found that there wasn't a huge discrepancy which suggests that the shipping company is not a huge factor in determining whether or not the order will be late.
 
-![Operational Insights 4](link_to_your_ERD_image_here)
+![Operational Insights 4](./images/Operational%20Insights%204.png)
 
 There doesn't seem to be a strong pattern or seasonality of the quantity of popular products sold throughout the years.
 
-![Operational Insights 5](link_to_your_ERD_image_here)
+![Operational Insights 5](./images/Operational%20Insights%205.png)
 
 Exploring the top 10 cities by sales revenue tells us that Graz from Austria is tied with Boise from US for second place with Cunewalde from Germany being first.
-![Operational Insights 6](link_to_your_ERD_image_here)
+![Operational Insights 6](./images/Operational%20Insights%206.png)
 
 ### Employee Performance Evaluation
 
 We visualized sales data to rank employees by performance. Unsurprisingly, the number of orders handled by employees is proportional to the amount of sales revenue generated. Margaret Peakcock has the most orders and revenue generated followed by Janet and Nancy.
 
-![Employee Performance Evaluation 1](link_to_your_ERD_image_here)
+![Employee Performance Evaluation 1](./Employee%20Performance%20Evaluation%201.png)
 
 We explored whether or not supervision had an impact on Sales performance by running an ANOVA test to compare the means of the aggregate sales figures per employee across different supervisors. Our result tells us that the difference in sales performance across different supervisors' groups are statistically significant and suggests that supervision does impact an employee's total sales revenue.
 
@@ -371,7 +371,7 @@ This section focuses on analyzing sales trends and forecasting future sales usin
 ### Sales Analysis Over Time
 
 We visualized our sales revenue over time aggregated with different time periods to explore trends and seasonal patterns. Our monthly plot shows that the business was growing slowly, then stagnating, and had a meteoric rise from 2014-11 to 2015-04 then had a sharp drop due to data collection ending.
-![Sales Analysis Over Time 1](link_to_your_ERD_image_here)
+![Sales Analysis Over Time 1](./images/Sales%20Analysis%20Over%20Time%201.png)
 
 ### Forecasting
 
@@ -395,18 +395,18 @@ p-value: 9.568809996164918e-22
 
 To grab the parameters for our ARIMA model, we look at the lags from the ACF and PACF functions which reveals the relationship between a data point and its lags. In our case, it tells us if the sales revenue in the current week has any correlation with sales revenue X weeks before.
 
-![Forecasting 1](link_to_your_ERD_image_here)
+![Forecasting 1](./images/Forecasting%201.png)
 
 We graphed several sales over time plots for different periods to see if our ACF and PACF values are true. By exploring ACF lags 3 and 8, it does seem that the values are correct since there are negative and positive correlations.
 
-![Forecasting 2](link_to_your_ERD_image_here)
+![Forecasting 2](./images/Forecasting%202.png)
 
 AutoRegressive Integrated Moving Average (ARIMA) Model is a popular statistical approach for forecasting time series data. To start our forecasting, we cap our dataset at our last full week and do train test split which allows our model to be trained on training data in preparation for predicting future data.
 
 For our ARIMA model parameters, we use our PACF, differencing, and ACF values. We experimented with different parameters, using auto_arima which performs a stepwise search to minimize aic, and using the SARIMAX model which also considers seasonality and exogenous factors.
 
 The SARIMAX model was our best model by far when we compared their root mean squared error values. The next step is to apply the model to our original dataset by first applying detrending, fitting the SARIMAX model, forecast the future values, and then inverse the detrending process. 
-![Forecasting 3](link_to_your_ERD_image_here)
+![Forecasting 3](./images/Forecasting%203.png)
 
 Due to the fact that our dataset has less than 2 years of data, our SARIMAX model that forecasts the next 2 years is probably inaccurate and unreliable. I would expect a steady overall increase in sales revenue over time.
 
@@ -468,7 +468,7 @@ However, all of the diagnostic results and the notes indicate that our model lac
 
 Along with this, we also looked at and performed tests such as linearity, homoscedasticity, Breusch-Pagan, Omnibus, Shapiro-Wilk, Durbin-Watson, Jarque-Bera, Skew, Kurtosis, and Cond. No.
 
-![Linear Regression 1](link_to_your_ERD_image_here)
+![Linear Regression 1](./images/Linear%20Regression%201.png)
 
 We redid this model by choosing new features, used VIF and a correlation matrix to deal with multicollinearity, and standardized our continuous variables using StandardScaler(). This resulted in a model that has 18% Adj. R-squared but more reliable since it passes the OLS assumptions.
 ```
@@ -517,7 +517,7 @@ Random Forest Test MSE: 765452.701145029
 ```
 
 We can also take a look at our forest model's feature importance which allows us to see a quantitative measure of the impact each feature has on the model's prediction. It ranks features based on how useful they are at predicting the target variable.
-![Decision Trees and Random Forest 1](link_to_your_ERD_image_here)
+![Decision Trees and Random Forest 1](./images/Decision%20Trees%20and%20Random%20Forest%201.png)
 
 Upon reflection, our dataset presents certain challenges for predictive machine learning primarily due to limitations in the predictive power of the available features. However, our tree-based models can be further refined through pruning, adjusting parameters, enforcing constraints, cross-validation, better feature selection and dimensionality reduction, and/or stacking and boosting.
 
