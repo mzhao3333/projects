@@ -35,40 +35,40 @@ Python/Jupyter Notebook
 
 - [Setup](#Setup)
     - [Importing Libraries and Working Directory](#importing-libraries-and-working-directory)
-- [Data Loading]
-    - [Loading CSV Files and Dataframes Dictionary]
-- [Exploratory Data Analysis (EDA)]
-    - [Understanding the Dataset]
-    - [Data Quality Checks]
-    - [Descriptive Statistics]
-    - [Visual Explorations]
-- [Data Cleaning and Preparation]
-    - [Handling Missing Values]
-    - [Feature Engineering]
-- [Merging Dataframes]
-    - [Renaming Columns]
-    - [Joining Tables]
-- [In-depth Analysis and Insights]
-    - [Sales Revenue Analysis]
-    - [Customer Insights]
-    - [Operational Insights]
-    - [Employee Performance Evaluation]
-- [Time Series Analysis]
-    - [Sales Analysis Over Time]
-    - [Forecasting]
-- [Machine Learning Models]
-    - [Linear Regression]
-    - [Decision Trees and Random Forest]
-- [Conclusions and Insights]
-    - [Summarizing Key Findings]
-    - [Recommendations based on analysis]
-- [Appendicies]
-    - [Data Dictionary]
-    - [Code Snippets]
-    - [References]
+- [Data Loading](#data-loading)
+    - [Loading CSV Files and Dataframes Dictionary](#loading-csv-files-and-dataframes-dictionary)
+- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+    - [Understanding the Dataset](#understanding-the-dataset)
+    - [Data Quality Checks](#data-quality-checks)
+    - [Descriptive Statistics](#descriptive-statistics)
+    - [Visual Explorations](#visual-explorations)
+- [Data Cleaning and Preparation](#data-cleaning-and-preparation)
+    - [Handling Missing Values](#handling-missing-values)
+    - [Feature Engineering](#feature-engineering)
+- [Merging Dataframes](#merging-dataframes)
+    - [Renaming Columns](#renaming-columns)
+    - [Joining Tables](#joining-tables)
+- [In-depth Analysis and Insights](#in-depth-analysis-and-insights)
+    - [Sales Revenue Analysis](#sales-revenue-analysis)
+    - [Customer Insights](#customer-insights)
+    - [Operational Insights](#operational-insights)
+    - [Employee Performance Evaluation](#employee-performance-evaluation)
+- [Time Series Analysis](#time-series-analysis)
+    - [Sales Analysis Over Time](#sales-analysis-over-time)
+    - [Forecasting](#forecasting)
+- [Machine Learning Models](#machine-learning-models)
+    - [Linear Regression](#linear-regression)
+    - [Decision Trees and Random Forest](#decision-trees-and-random-forest)
+- [Conclusions and Insights](#conclusions-and-insights)
+    - [Summarizing Key Findings](#summarizing-key-findings)
+    - [Recommendations based on analysis](#recommendations-based-on-analysis)
+- [Appendicies](#appendicies)
+    - [Data Dictionary](#data-dictionary)
+    - [Code Snippets](#code-snippets)
+    - [References](#references)
 
 
-## Setup
+##[Setup](#table-of-contents)
 
 Preparing our Python environment with the necessary libraries and correct working directory is fundamental as it allows for data manipulation, analysis, visualization, and access to our resources.
 
