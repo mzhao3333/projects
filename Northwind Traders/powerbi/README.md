@@ -44,6 +44,28 @@ The data model uses star schema architecture which organizes data into one or mo
 - The **orders** table is linked to all dimension tables through their respective keys (e.g., orderID, customerID, employeeID)
 - A one-to-many relationship exists from most dimension table to the fact tables with 'Both' cross filter direction reflects that each entry in the dimension table can be associated with multiple entries in the fact table and allows filtering to work for both sides of the relationship.
 
-  ## DAX Measures and Calculated Columns
+## DAX Measures, Calculated Columns, and Tables
 
-  Several DAX measures are implemented to enhance the model's analytical capabilities
+**DAX Measures** (Formulas Table)
+- Average Order Value = DIVIDE([Total Sales], [Total Orders])
+- MoM Growth = DIVIDE([Sales Current Month] - [Sales Previous Month], [Sales Previous Month])
+- Order Size Bin = 
+CALCULATE(
+    DISTINCTCOUNT('order_details'[orderID]),
+    ALLEXCEPT('order_details', 'order_details'[orderID])
+)
+- Top 10 Products = 
+RANKX(
+    ALL('products'[productName]), 
+    [Total Quantity Sold], 
+    , DESC, Dense
+)
+- Total Orders = DISTINCTCOUNT('orders'[OrderID])
+- Total Quantity Sold = SUMX(
+    RELATEDTABLE('order_details'),
+    'order_details'[quantity]
+)
+- Total Sales = SUM(order_details[Sales Revenue])
+- YoY Growth = DIVIDE([Sales Current Year] - [Sales Previous Year], [Sales Previous Year])
+
+
