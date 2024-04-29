@@ -38,7 +38,7 @@ This visualization allows us to grasp the data's complexity and will guide our e
 
 ## Tools
 
-Python/Jupyter Notebook
+Python/Jupyter Notebook, PowerBI, PowerPoint
 
 ### Libraries Used
 
