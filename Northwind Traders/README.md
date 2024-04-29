@@ -5,6 +5,8 @@ Dataset: [Northwind Traders Data from Maven Analytics](https://mavenanalytics.io
 
 For a thorough understanding and a step-by-step guide through the analysis, including code and detailed visualizations, refer to the [full Jupyter notebook](./jupyter%20notebook/Northwind%20Traders%20Analysis.ipynb).
 
+For the PowerBI section, refer to [PowerBI](./powerbi)
+
 ## Navigating This README
 
 Welcome to the README for the Northwind Traders analysis project. This document is designed as a concise summary of the comprehensive analysis conducted in our Jupyter Notebook. It aims to provide quick insights and overviews for readers interested in the findings without diving deep into the code and detailed explorations.
