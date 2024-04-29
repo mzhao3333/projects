@@ -89,13 +89,38 @@ Description of the reports and dashboards created.
 Key visualizations and their purposes.
 Insights or trends highlighted by the visualizations.
 
+**KPI Cards**
+- **Total Sales Revenue YTD**: An aggregate sum of sales revenue earned for all time
+- **Month over Month Growth**: Percentage change of current month's sales revenue compared to the previous month
+- **Year over Year Growth**: Percentage change of current year's sales revenue compared to the previous year
+- **Average Order Value**: The average amount of sales revenue per order placed
+
+**Visualizations**
+- **Sales Revenue Over Time**: A line chart that shows sales revenue earned per time period
+- **Top 10 Categories by Sales Revenue**: A bar chart that shows the amount of sales revenue earned by the top 10 categories
+- **Sales Revenue by Country**: A world wide map that compares the amount of sales revenue generated from each customer's country
+- **Top 10 Products by Quantity**: A bar chart that shows the amount of quantity ordered for the top 10 products
+
 # Interactivity and User Experience
-Features like slicers, drill-throughs, or tooltips.
-How these features enhance user interaction and data exploration.
+
+  **Features**
+  - Context pane that displays a tooltip for each visualization with a short summary of what it is
+  - Filter pane that displays slicers for Year, Month, Country, Category, and Shipping Company
+  - Contact pane to allow users to look at my links
+  - Page navigator to allow users to switch to different dashboards
+  - Drill-through capabilities on the line chart to allow users to look at year, quarter, month, or date time periods
 
 # Challenges and Solutions
-Any significant challenges faced during the PowerBI development.
-How you addressed these challenges.
+1. PowerBI allows you to import and **combine** multiple files by selecting the folder. If you have multiple csv files that are supposed to be **individual** tables, you have to import them one at a time.
+2. PowerBI has M expressions (PowerQuery) and DAX expressions; M expressions are used for data preparation, transformation, and cleaning before loading into PowerBI models and is used in the Power Query Editor. DAX is used for creating calculated columns, measures, and tables in the data model after the data has been loaded into PowerBI.
+3. Data Modeling can be difficult with a large number of related tables since you have to check each tables' cardinality as well as cross-filter direction.
+4. PowerBI has basic aesthetics which can make the dashboard look bland; Many people create their own colored/gradient containers and backgrounds in PowerPoint
+5. Changing the font/color/size for each element can be tedious; Use a theme to consistently apply the same format
+6. Prevent things from looking misaligned by using the align function as well as gridlines and snap to grid
+7. Use the selection pane and name each element to stay organized and know exactly what you're clicking
+8. Bookmarks allow you to change the state of the dashboard, create pop-up panes/windows to give off an app-like feel
+9. Time functions do not work well if your data doesn't contain values for each date. Create a calendar through DAX or Bravo and relate your data to it
+10. Unlike Tableau's page shelf, PowerBI's play axis only filters the visualizations to the specific time period and increases sequentially without showing history or cumulativeness
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://michaelkzhao.wixsite.com/portfolio)
