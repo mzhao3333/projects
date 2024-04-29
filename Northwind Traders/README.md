@@ -77,6 +77,7 @@ Python/Jupyter Notebook
     - [Recommendations based on analysis](#recommendations-based-on-analysis)
 - [Appendicies](#appendicies)
     - [Data Dictionary](#data-dictionary)
+- [Contact Me](#contact-me)
 
 
 ## Setup
@@ -606,7 +607,7 @@ We should evaluate the supervision strategies for our managers and apply their t
 
 
 
-## 🔗 Links
+## 🔗 Contact Me
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://michaelkzhao.wixsite.com/portfolio)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/michaelkzhao/)
 [![Tableau](https://img.shields.io/badge/Tableau-ff7043?style=for-the-badge&logo=Tableau&logoColor=white)](https://public.tableau.com/app/profile/michaelkzhao/vizzes)
