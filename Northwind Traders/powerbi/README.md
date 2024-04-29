@@ -82,7 +82,7 @@ RANKX(
 
 
 Here is an image of how my tables and relationships look in PowerBI's model view:
-![image of powerbi model view](./images/Loading%20CSV%20Files%20and%20Dataframes%20Dictionary%201.png)
+![PowerBI Model View](./imgs/PowerBI%20Model%20View.png)
 
 # Reports and Visualizations
 Description of the reports and dashboards created.
