@@ -82,7 +82,7 @@ RANKX(
 **Calculated Columns**
 - = Table.AddColumn(#"Changed Type", "Sales Revenue", each (1 - [discount]) * [quantity] * [unitPrice])
 
-        Added a new column to calculates Sales Revenue for each order in **Power Query Editor**
+        Added a new column to calculates Sales Revenue for each order in Power Query Editor
 
 **Tables**
 - 1.Formulas Table = ROW("DummyColumn", BLANK())
