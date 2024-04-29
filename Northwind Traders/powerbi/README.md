@@ -44,7 +44,7 @@ The data model uses star schema architecture which organizes data into one or mo
 - The **orders** table is linked to all dimension tables through their respective keys (e.g., orderID, customerID, employeeID)
 - A one-to-many relationship exists from most dimension table to the fact tables with 'Both' cross filter direction reflects that each entry in the dimension table can be associated with multiple entries in the fact table and allows filtering to work for both sides of the relationship.
 
-## DAX Measures, Calculated Columns, and Tables
+## Key DAX Measures, Calculated Columns, and Tables
 
 **DAX Measures** (Formulas Table)
 - Average Order Value = DIVIDE([Total Sales], [Total Orders])
@@ -79,5 +79,27 @@ RANKX(
         Created a formula table to hold DAX measures
 - Created a duplicated 'employees' table to act as a 'managers' table when referencing the original 'employees' table
 - Utilized [Bravo](https://www.sqlbi.com/tools/bravo-for-power-bi/) to create a Date table since our data doesn't have values for every date
+
+
+Here is an image of how my tables and relationships look in PowerBI's model view:
+![image of powerbi model view](./images/Loading%20CSV%20Files%20and%20Dataframes%20Dictionary%201.png)
+
+# Reports and Visualizations
+Description of the reports and dashboards created.
+Key visualizations and their purposes.
+Insights or trends highlighted by the visualizations.
+
+# Interactivity and User Experience
+Features like slicers, drill-throughs, or tooltips.
+How these features enhance user interaction and data exploration.
+
+# Challenges and Solutions
+Any significant challenges faced during the PowerBI development.
+How you addressed these challenges.
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://michaelkzhao.wixsite.com/portfolio)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/michaelkzhao/)
+[![Tableau](https://img.shields.io/badge/Tableau-ff7043?style=for-the-badge&logo=Tableau&logoColor=white)](https://public.tableau.com/app/profile/michaelkzhao/vizzes)
 
 
