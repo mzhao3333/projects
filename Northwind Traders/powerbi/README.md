@@ -1,3 +1,14 @@
+# Preview of Dashboard
+
+![Sales Dashboard](./imgs/Sales%20Dashboard.png)
+
+![Sales Dashboard Context](./imgs/Sales%20Dashboard%20Context.png)
+
+![Sales Dashboard Filter](./imgs/Sales%20Dashboard%20Filters.png)
+
+![Sales Dashboard Contact](./imgs/Sales%20Dashboard%20Contact.png)
+
+
 # Introduction
 
 The purpose of this PowerBI dashboard is to provide a comprehensive overview of sales performance across various dimensions such as time periods, product categories, and geographic regions. This dashboard is designed to empower the sales teams, management, and stakeholders with actionable insights that drive strategic decision-making and optimize sales processes.
