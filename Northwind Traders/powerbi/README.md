@@ -68,4 +68,14 @@ RANKX(
 - Total Sales = SUM(order_details[Sales Revenue])
 - YoY Growth = DIVIDE([Sales Current Year] - [Sales Previous Year], [Sales Previous Year])
 
+**Calculated Columns**
+- = Table.AddColumn(#"Changed Type", "Sales Revenue", each (1 - [discount]) * [quantity] * [unitPrice])
+    Added a new column to calculates Sales Revenue for each order in **Power Query Editor**
+
+**Tables**
+- 1. Formulas Table = ROW("DummyColumn", BLANK())
+    Created a formula table to hold DAX measures
+- Created a duplicated 'employees' table to act as a 'managers' table when referencing the original 'employees' table
+- Utilized [Bravo](https://www.sqlbi.com/tools/bravo-for-power-bi/) to create a Date table since our data doesn't have values for every date
+
 
