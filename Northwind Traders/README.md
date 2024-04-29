@@ -77,7 +77,6 @@ Python/Jupyter Notebook
     - [Recommendations based on analysis](#recommendations-based-on-analysis)
 - [Appendicies](#appendicies)
     - [Data Dictionary](#data-dictionary)
-- [Contact Me](#contact-me)
 
 
 ## Setup
