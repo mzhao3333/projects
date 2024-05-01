@@ -26,7 +26,7 @@ The primary objective of this project is to conduct a comprehensive analysis of 
 
 ## Description of the Dataset
 
-This dataset contains sales & order data for Northwind Traders, a ficticious gourmet food supplier, including information on customers, products, orders, shippers, and employees.
+This dataset contains sales & order data for Northwind Traders, a fictitious gourmet food supplier, including information on customers, products, orders, shippers, and employees.
 
 
 ## Entity Relationship Diagram (ERD)
