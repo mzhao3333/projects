@@ -1,6 +1,6 @@
 # Preview of Dashboard
 
-##
+![Northwind Traders dashboard gif](./imgs/PowerBI%20Northwind%20Traders.gif)
 
 ![Sales Dashboard](./imgs/Sales%20Dashboard.png)
 
