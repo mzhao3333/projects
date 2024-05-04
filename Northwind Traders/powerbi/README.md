@@ -130,6 +130,9 @@ Here is an image of how my tables and relationships look in PowerBI's model view
 9. Time functions do not work well if your data doesn't contain values for each date. Create a calendar through DAX or Bravo and relate your data to it
 10. Unlike Tableau's page shelf, PowerBI's play axis only filters the visualizations to the specific time period and increases sequentially without showing history or cumulativeness
 
+# Work In Progress
+Employee Performance and Customer Insights dashboards are currently a WIP as of 5/4/2024.
+
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://michaelkzhao.wixsite.com/portfolio)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/michaelkzhao/)
