@@ -1,6 +1,6 @@
 # Preview of Dashboard
 
-![Uploading PowerBI Northwind Traders GIF.gif…]()
+![Northwind Traders gif](./imgs/PowerBI%20Northwind%20Traders%20GIF.gif)
 
 ![Sales Dashboard](./imgs/Sales%20Dashboard.png)
 
