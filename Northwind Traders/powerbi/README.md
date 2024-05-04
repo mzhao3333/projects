@@ -1,15 +1,8 @@
 # Preview of Dashboard
 
-![Northwind Traders dashboard gif](./imgs/PowerBI%20Northwind%20Traders.gif)
-
 ![Sales Dashboard](./imgs/Sales%20Dashboard.png)
 
-![Sales Dashboard Context](./imgs/Sales%20Dashboard%20Context.png)
-
-![Sales Dashboard Filter](./imgs/Sales%20Dashboard%20Filters.png)
-
-![Sales Dashboard Contact](./imgs/Sales%20Dashboard%20Contact.png)
-
+![Northwind Traders dashboard gif](./imgs/PowerBI%20Northwind%20Traders.gif)
 
 # Introduction
 
