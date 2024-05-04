@@ -124,6 +124,7 @@ Here is an image of how my tables and relationships look in PowerBI's model view
 8. Bookmarks allow you to change the state of the dashboard, create pop-up panes/windows to give off an app-like feel
 9. Time functions do not work well if your data doesn't contain values for each date. Create a calendar through DAX or Bravo and relate your data to it
 10. Unlike Tableau's page shelf, PowerBI's play axis only filters the visualizations to the specific time period and increases sequentially without showing history or cumulativeness
+11. Without a powerbi license, you are unable to share it online with other people unlike Tableau Public. I have created a short gif to show the context, filter, and contact panes.
 
 # Work In Progress
 Employee Performance and Customer Insights dashboards are currently a WIP as of 5/4/2024.
